@@ -4,8 +4,17 @@ This repository contains a Python-based implementation of Finite Element Analysi
 The code is largely based on the Method of Finite Elements I course, taught at ETH Zurich by Prof. Chatzi.
 The implementation includes truss and beam elements along with two-dimensional plane stress elements (triangles and quadrilaterals).
 
-Material repository:
+## Material repository:
 
 https://polybox.ethz.ch/index.php/s/el24YlfFv2FGCYV
 
 The background literature and additional material on ABAQUS and FEM theory are included in the polybox repository above. 
+
+## Next Steps:
+
+- Familiarize with existing code template and study existing case studies
+- Beam Elements: Compute stresses
+- 2D Elements: Compute stresses
+- ABAQUS: Familiarize with existing tutorials and case studies
+- ABAQUS: Structural analysis on example system (to be defined)
+
