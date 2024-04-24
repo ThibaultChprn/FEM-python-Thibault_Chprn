@@ -13,6 +13,135 @@ class mesh:
             self.getMesh_2023()
         elif analysis=="Assignment_2024":
             self.getMesh_2024()
+        elif analysis=="Assignment_2022":
+            self.getMesh_2022()
+        elif analysis=="PlaneFrameDemo":
+            self.getMesh_Frame()
+
+    def getMesh_2022(self):
+        E, rho = 2.1e11, 7850
+        A1, I1 = 400e-3,  1450e-6
+        A2, I2 =  250e-3,  980e-6
+        P1,P2,P3 = [250e3, 80e3, 54e3]
+        ks = 5e3
+
+        self.nodes = np.array([
+            [0, 0],
+            [9, 0],
+            [10.5, 0],
+            [12, 0],
+            [21, 0],
+            [3, -5],
+            [18, -5],
+            [21, 0] # Virtual duplicate node, same coordinates as Node 4
+        ])
+
+        self.connectivity = np.array([
+            [0, 1],
+            [1, 2],
+            [2, 3],
+            [3, 4],
+            [1, 5],
+            [3, 6],
+            [4, 7] #Virtual element representing the spring "truss"
+        ])
+
+        self.ElementProperties = np.array([
+            [E, rho, A1, I1, 0],
+            [E, rho, A2, I2, 0],
+            [0,  0, ks, 0 , 3],
+        ])
+
+        self.crossSections = np.array([
+            [0],
+            [0],
+            [0],
+            [0],
+            [1],
+            [1],
+            [2]
+        ])
+
+        phi = np.pi/4
+        cos45 = np.cos(phi)
+        sin45 = np.sin(phi)
+
+        self.nodalLoads = np.array([
+            [1, P2*cos45, -P2*sin45, 0],
+            [2, 0, -P1, 0],
+            [3, -P3*cos45, -P3*sin45, 0]
+        ])
+
+        self.BCs = np.array([
+            [0,1,1,0],
+            [5,1,0,0], # Inclined support condition (left - expressed in "local" coordinates - implies that after rotating localy the x-axis is restrained )
+            [6,1,1,1], # Inclined support condition (right)
+            [7,1,1,1], # Virtual node needs to be fully constrained as it represents the ground    
+        ])
+
+        self.BCsRot = np.array([
+                [5, -math.atan(5/6) ],
+                [6, 0 ]
+        ])
+
+        self.distributedLoads = np.zeros((self.connectivity.shape[0],2))
+
+
+    def getMesh_Frame(self):
+        E = 4e10    #Young modulus 
+        rho = 4500  #Density
+
+        A1, I1 = 102e-3,  980e-6 #Cross-section area of elements with type 1
+        A2, I2 =  93e-3,  720e-6
+        A3, I3 = 140e-3, 2430e-6
+
+        self.nodes = np.array([
+            [0, 0], #1st row contains the x,y coordinates of the 1st node. Pay attention to the [x,y] structure of the array
+            [6, 0],
+            [0, 6],
+            [6, 6],
+            [0, 12],
+            [6, 12]
+        ])
+
+        self.connectivity = np.array([
+            [0, 2], #1st element in 1st row. The start node is N1, so the first node, so index 0. The end node is N3, so index 2.
+            [1, 3],
+            [2, 4],
+            [3, 5],
+            [2, 3],
+            [4, 5]    
+        ])
+
+        self.ElementProperties = np.array([
+            [E, rho, A1, I1, 0],
+            [E, rho, A2, I2, 0],
+            [E, rho, A3, I3, 0]
+        ])
+
+        self.crossSections = np.array([
+            [0], #1st row corresponds to the first element. We want its cross-section, so A1, I1. A1.I1 are in the 1st row of the crossSectionProperties matrix. So the index is 0.
+            [0], #So, for each element we will have actual cross section = crossSectionProperties[crossSections[ElementIndex]][0]
+            [1], 
+            [1],
+            [2], 
+            [2]    
+        ])
+
+        self.BCs = np.array([
+            [0, 1, 1, 1],
+            [1, 1, 1, 1]
+        ])
+
+        self.nodalLoads=np.zeros((self.nodes.shape[0],4))
+
+        self.distributedLoads = np.zeros((self.connectivity.shape[0],2))
+
+        self.BCsRot = np.array([
+                [0, 0]
+            ])
+        
+
 
     def getMesh_2024(self, VerticalDistance=0.5, HorizontalDistance=0.5):
         # Material and excitation properties - SI units convention (N,m,kg,s)

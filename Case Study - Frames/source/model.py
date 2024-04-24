@@ -258,6 +258,8 @@ class Model:
             # Plot the elements of the deformed system
             plt.plot(x_coordinates, y_coordinates, 'r')
 
+        plt.show()
+
 
     class Equation:
         def __init__(self, ndofs):

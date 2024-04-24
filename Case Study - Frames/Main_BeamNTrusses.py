@@ -5,8 +5,10 @@ import source.solvers as solvers
 import numpy as np
 
 ####### Create geometry #######
-#Mesh = geometry.mesh("Assignment_2023")
-Mesh = geometry.mesh("Assignment_2024")
+Mesh = geometry.mesh("Assignment_2023") #-> OK!
+#Mesh = geometry.mesh("Assignment_2024") #-> OK!
+#Mesh = geometry.mesh("PlaneFrameDemo")  #-> OK!
+#Mesh = geometry.mesh("Assignment_2022") #-> OK!
 Mesh.getMesh()
 
 FEMmodel = model.Model(Mesh)    	
@@ -15,9 +17,9 @@ FEMmodel.make()
 #FEMmodel.PlotDeformed()
 
 ####### Solve #######
-#U = solvers.solveNumerical(FEMmodel) 
-#FEMmodel.PlotDeformed()
+U = solvers.solveNumerical(FEMmodel, True) 
+FEMmodel.PlotDeformed()
 
-freqs, eigens = solvers.solveModal(FEMmodel, print_results=True) 
-FEMmodel.PlotDeformed(eigens[:,0])
+#freqs, eigens = solvers.solveModal(FEMmodel, print_results=True) 
+#FEMmodel.PlotDeformed(eigens[:,4])
 print(ARK)
