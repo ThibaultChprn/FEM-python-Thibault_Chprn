@@ -12,7 +12,7 @@ The background literature and additional material on ABAQUS and FEM theory are i
 
 ## Next Steps:
 - Create a graphical abstract or a summary in the form of a presentation slide. This summary should describe all steps involved when performing a structural analysis of an engineering system using Finite Elements. The respective graph or slide should function as the introductory slide on the progress presentation to be scheduled. Thus, it should describe in short, not only the steps but also the processes and details involved that you have familiarized yourself with.
-- Decide for a system of interest to perform a structural analysis on. 
+- Decide for a system of interest to perform a structural analysis on (e.g. frame system, airplane wing, turbine, structural panel). You can find some pictures of such systems in the folder labeled "StructuralSystems". More examples can be found here: https://grabcad.com/library 
 - ABAQUS: Familiarize with existing tutorials and case studies
 - ABAQUS: Structural analysis on example system (to be defined)
 - Compare ABAQUS results with python template results
