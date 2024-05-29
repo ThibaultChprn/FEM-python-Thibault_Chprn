@@ -10,10 +10,12 @@ https://polybox.ethz.ch/index.php/s/el24YlfFv2FGCYV
 
 The background literature and additional material on ABAQUS and FEM theory are included in the polybox repository above. 
 
-## Next Steps:
-- Create a graphical abstract or a summary in the form of a presentation slide. This summary should describe all steps involved when performing a structural analysis of an engineering system using Finite Elements. The respective graph or slide should function as the introductory slide on the progress presentation to be scheduled. Thus, it should describe in short, not only the steps but also the processes and details involved that you have familiarized yourself with.
-- Decide on a system of interest to perform a structural analysis on (e.g. frame system, airplane wing, turbine, structural panel). You can find some pictures of such systems in the folder labeled "StructuralSystems". More examples can be found here: https://grabcad.com/library 
-- ABAQUS: Familiarize with existing tutorials and case studies
-- ABAQUS: Structural analysis on example system (to be defined)
-- Compare ABAQUS results with Python template results
-
+## Next Short-Term Steps:
+- Improve summary graph/mind map and prepare for update progress meeting with Eleni
+- Recap Lecture 7, 2D Elements and Feliba book, Chapter 9 (the Table). Also, check the PowerPoint slides on shearlocking.
+- Check the analysis [here](https://enterfea.com/what-are-the-types-of-elements-used-in-fea/) and [here](https://enterfea.com/why-is-a-triangular-element-stiffer/) on how to decide the type of element to use and how 2D elements compare. Also, check the second PowerPoint in 2D Elements.
+ABAQUS: Familiarize with existing tutorials and case studies
+## Next Long-Term Steps:
+- ABAQUS: Structural analysis on example system= BRIDGE (I will try to find some ready CAE models to use)
+- Compare ABAQUS results with Python template results (if possible)
+- Familiarize with literature in modal analysis
