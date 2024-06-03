@@ -18,4 +18,5 @@ The background literature and additional material on ABAQUS and FEM theory are i
 - ABAQUS: Structural analysis on example bridge structure. The system of interest is located here: [ABAQUS Bridge file](StructuralSystems/BridgeModel)
 - Study Chapters 9-12 from Chopra's book and Chapter 31 from Felipa on dynamics. Focus on modal analysis and results interpretation.
 ## Next Long-Term Steps:
+- Produce a structural analysis report on the bridge, including modal analysis in the form of a short progress-update presentation. 
 - Compare ABAQUS results with Python template results (if possible)
