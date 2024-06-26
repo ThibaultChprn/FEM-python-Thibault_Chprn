@@ -11,12 +11,12 @@ https://polybox.ethz.ch/index.php/s/el24YlfFv2FGCYV
 The background literature and additional material on ABAQUS and FEM theory are included in the polybox repository above. 
 
 ## Next Short-Term Steps:
-- Improve summary graph/mind map and prepare for update progress meeting with Eleni
-- Recap Lecture 7, 2D Elements and Feliba book, Chapter 9 (the Table). Also, check the PowerPoint slides on shearlocking [here](https://github.com/ThibaultChprn/FEM-python-Thibault_Chprn/blob/main/ShearLocking.pptx).
-- Check the analysis [here](https://enterfea.com/what-are-the-types-of-elements-used-in-fea/) and [here](https://enterfea.com/why-is-a-triangular-element-stiffer/) on how to decide the type of element to use and how 2D elements compare. Also, check the second PowerPoint in 2D Elements [here](https://github.com/ThibaultChprn/FEM-python-Thibault_Chprn/blob/main/TRIQUADDemo.pptx).
-- ABAQUS: Familiarize with existing tutorials and case studies
-- ABAQUS: Structural analysis on example bridge structure. The system of interest is located here: [ABAQUS Bridge file](StructuralSystems/BridgeModel)
+- ABAQUS 3D model for cantilever structure with solid elements. Perform modal analysis and obtain modeshapes.
+- ABAQUS or Python model for cantilever structure with Euler-Bernoulli beam elements. Perform modal analysis and obtain modeshapes.
 - Study Chapters 9-12 from Chopra's book and Chapter 31 from Felipa on dynamics. Focus on modal analysis and results interpretation.
+- Study Fernando's paper [here](https://link.springer.com/chapter/10.1007/978-3-030-47717-2_36) (Also shared in Slack)
+- Start implementing the visualization of the modeshapes for the simple cantilever model in Unity
+
 ## Next Long-Term Steps:
-- Produce a structural analysis report on the bridge, including modal analysis in the form of a short progress-update presentation. 
-- Compare ABAQUS results with Python template results (if possible)
+- Visualize modeshapes for the 3D example in Unity
+- Start working with the mixed reality toolkit in the Mixed-Reality-Headset (to be bought) 
